@@ -236,8 +236,6 @@ table(labels)
 keep = (labels==1)
 multiExpr_FC[[2]]$data = multiExpr_FC[[2]]$data[keep, ]
 
-collectGarbage()
-# Check the size of the leftover data
 exprSize_FC = checkSets(multiExpr_FC)
 exprSize_FC
 
@@ -272,7 +270,6 @@ for (set in 1:nSets_FC){
   sampleTrees2_FC[[set]] = hclust(dist(multiExpr_FC[[set]]$data), method = "average")
 }
 
-#pdf(file = "2.output/2.ndd_wgcna/figure/FCx/02_SampleClustering_cutHeights.pdf", width = 12, height = 12)
 par(mar = c(0, 4, 2, 0))
 for (set in 1:nSets_FC) {
   pdf(file = paste0("2.output/4.dev_wgcna/figure/FCx/dtsplit/03_SampleClustering_Trait_",setLabels_FC[set],".pdf"), width = 10, height = 5)
