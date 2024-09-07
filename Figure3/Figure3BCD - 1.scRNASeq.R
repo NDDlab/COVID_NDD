@@ -26,7 +26,6 @@ HC21 <- process_seurat(data.dir = "1.rawdata/MomBloodScRNA/GSE192693_RAW/GSM5761
 
 HC22 <- process_seurat(data.dir = "1.rawdata/MomBloodScRNA/GSE192693_RAW/GSM5761211_HC22_processed/",
                                      project_name = "HC22", group_name = "Postpartum")
-HC22 <- FindVariableFeatures(HC22, selection.method = "vst", nfeatures = 2000)
 
 ######################################################
 #                     2. Perform integration, dimension reduction, cluster
